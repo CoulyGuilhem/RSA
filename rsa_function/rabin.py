@@ -32,9 +32,9 @@ def is_prime_rabin_miller(n, k=5):
     return True
 
 
-def generate_prime(k=5):
-    lower_bound = 10 ** 9
-    upper_bound = 10 ** 10 - 1
+def generate_prime(size=10, k=5):
+    lower_bound = 10 ** (size - 1)
+    upper_bound = (10 ** size) - 1
     while True:
         candidate = random.randint(lower_bound, upper_bound)
         if candidate % 2 == 0:

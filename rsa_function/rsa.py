@@ -28,11 +28,11 @@ def find_e(phi_n):
             return e
 
 
-def key_gen():
-    p = generate_prime()
-    q = generate_prime()
+def key_gen(size=10):
+    p = generate_prime(size=size)
+    q = generate_prime(size=size)
     while p == q:
-        q = generate_prime()
+        q = generate_prime(size=size)
     n = p * q
     phi_n = (p - 1) * (q - 1)
     e = find_e(phi_n)
